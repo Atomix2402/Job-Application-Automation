@@ -31,11 +31,11 @@ jobs:
           pip install -r requirements.txt
 
       # Step 4: Create credential files from secrets
-      # This writes the plain text from the secrets directly to the files.
+      # Using printf is more reliable for multi-line secrets than echo.
       - name: Create credential files from secrets
         run: |
-          echo "${{ secrets.GMAIL_CREDENTIALS }}" > credentials.json
-          echo "${{ secrets.GMAIL_TOKEN }}" > token.json
+          printf '%s\n' "${{ secrets.GMAIL_CREDENTIALS }}" > credentials.json
+          printf '%s\n' "${{ secrets.GMAIL_TOKEN }}" > token.json
       
       # Step 5: Run the main Python script
       # It uses the secrets you stored in the repository settings for Notion and Gemini
