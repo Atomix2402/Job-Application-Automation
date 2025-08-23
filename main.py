@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os
 import base64
 import json
@@ -564,4 +563,3 @@ def main():
 
 if __name__ == '__main__':
     main()
->>>>>>> a82d765478e20298888f88619a6d3309e5bc7cf4
