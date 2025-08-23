@@ -30,12 +30,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 4: Decode secrets and create credential files
-      # This is the most reliable way to handle multi-line JSON secrets.
+      # Step 4: Create credential files from secrets
+      # This writes the plain text from the secrets directly to the files.
       - name: Create credential files from secrets
         run: |
-          echo "${{ secrets.GMAIL_CREDENTIALS }}" | base64 -d > credentials.json
-          echo "${{ secrets.GMAIL_TOKEN }}" | base64 -d > token.json
+          echo "${{ secrets.GMAIL_CREDENTIALS }}" > credentials.json
+          echo "${{ secrets.GMAIL_TOKEN }}" > token.json
       
       # Step 5: Run the main Python script
       # It uses the secrets you stored in the repository settings for Notion and Gemini
