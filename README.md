@@ -86,12 +86,3 @@ You need to collect four sets of keys.
 * Click **"+ Add connections"** and add the integration you just created ("Job Tracker Bot").
 * From the database URL, copy the **Database ID** (the long string of characters):
   `https://www.notion.so/your-workspace/`**`[THIS_IS_THE_DATABASE_ID]`**`?v=...`
-
-### Part 2: Local Setup (To Get `token.json`)
-
-This step is **mandatory** to authorize the script with your Google account for the first time.
-
-1. **Clone the Repository:**
-   ```bash
-   git clone [https://github.com/your-username/your-repository.git](https://github.com/your-username/your-repository.git)
-   cd your-repository
